@@ -1,3 +1,26 @@
-<p>
-  <a routerLink="/cart">Cart</a>
-</p>
+<nav class="navbar navbar-expand-sm navbar-dark px-sm-5">
+  <!--  https://www.iconfinder.com/icons/1243689/call_phone_icon
+                  Creative Commons (Attribution 3.0 Unported);
+                  https://www.iconfinder.com/Makoto_msk -->
+  <a routerLink="/products">
+    <img src='./assets/logo.svg'
+         alt='store'
+         class='navbar-brand'/>
+  </a>
+  <ul class='navbar-nav align-items-center'>
+    <li class='nav-item ml-5'>
+      <a routerLink='/' class='nav-link'>
+        products
+      </a>
+    </li>
+  </ul>
+  <a routerLink='/cart'
+     class='ml-auto'>
+    <button>
+      <span class='mr-2'>
+        <i class="fas fa-cart-plus"></i>
+      </span>
+      My cart
+    </button>
+  </a>
+</nav>
