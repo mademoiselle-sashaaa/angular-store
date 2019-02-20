@@ -1,3 +1,20 @@
-<p>
-  product works!
-</p>
+<div class='col-9 mx-auto col-md-6 col-lg-3 my-3'>
+  <div class="card">
+    <div class="img-container p-5">
+      <a routerLink='/cart'>
+        <img src={product.img} alt='product' class='card-img-top'/>
+      </a>
+      <button class='cart-btn' disabled={{product.inCart}}>
+      </button>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <p class='align-self-center mb-0'>
+        {{product.title}}
+      </p>
+      <h5 class="text-blue font-italic mb-0">
+        <span class='mr-1'>$</span>
+        {{product.price}}
+      </h5>
+    </div>
+  </div>
+</div>
