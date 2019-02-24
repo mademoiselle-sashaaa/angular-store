@@ -8,4 +8,12 @@ import {Product} from '../product';
 })
 export class ProductComponent {
   @Input() product: Product;
+
+  handleDetail(product) {
+    console.log(product);
+  }
+
+  addToCart(product) {
+    console.log('added');
+  }
 }
