@@ -1,4 +1,4 @@
-export class Phone {
+export class Product {
   id: number;
   title: string;
   img: string;

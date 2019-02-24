@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PRODUCTS} from '../../data-mock';
 
 @Component({
   selector: 'app-product-list',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-
+  products = PRODUCTS;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.products);
   }
 
 }
