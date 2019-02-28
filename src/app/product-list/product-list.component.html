@@ -1,11 +1,11 @@
 <div class='py-5'>
   <div class='container'>
-   <app-title></app-title>
+    <app-title></app-title>
     <div class='row'>
       <app-product *ngFor="let product of products"
-                      [product]="product">
+                   [product]="product"
+                   class="col-9 mx-auto col-md-6 col-lg-3 my-3">
       </app-product>
     </div>
   </div>
 </div>
-
