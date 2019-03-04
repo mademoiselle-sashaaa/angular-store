@@ -9,9 +9,10 @@ import {Product} from '../product';
 export class ProductComponent {
   @Input() product: Product;
 
-  handleDetail(product) {
+/*  handleDetail(product) {
+    debugger;
     console.log(product);
-  }
+  }*/
 
   addToCart(product) {
     console.log('added');
