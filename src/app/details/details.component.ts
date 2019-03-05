@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../product';
+import {Component, OnInit, Input} from '@angular/core';
+import {Product} from '../product';
 
 @Component({
   selector: 'app-details',
@@ -9,7 +9,16 @@ import { Product } from '../product';
 export class DetailsComponent implements OnInit {
   @Input() product: Product;
 
-  constructor() { }
+  constructor() {
+  }
+
+  addToCart(id) {
+    console.log('added', id);
+  }
+
+  openModal(id) {
+    console.log('modal', id);
+  }
 
   ngOnInit() {
   }

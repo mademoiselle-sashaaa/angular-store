@@ -9,7 +9,6 @@ import { ProductComponent } from './product/product.component';
 import { DetailsComponent } from './details/details.component';
 import { DefaultComponent } from './default/default.component';
 import { CartComponent } from './cart/cart.component';
-import { CartButtonComponent } from './cart-button/cart-button.component';
 import { TitleComponent } from './title/title.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { TitleComponent } from './title/title.component';
     DetailsComponent,
     DefaultComponent,
     CartComponent,
-    CartButtonComponent,
     TitleComponent
   ],
   imports: [

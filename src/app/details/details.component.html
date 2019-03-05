@@ -24,20 +24,21 @@
         <p class='text-muted lead'>
          {{product.info}}
         </p>
-        /* buttons */
+         <!--buttons-->
         <div>
           <a routerLink ='/'>
-          <button>
+          <button class="cart-btns">
             Back to Products
           </button>
           </a>
           <button
-            disabled={{product.inCart}}}>
-            <!--onClick={() => {-->
-          <!--value.addToCart(id);-->
-          <!--value.openModal(id);-->
-          <!--}}>-->
-          <!--{inCart? 'InCart':'Add to cart'}-->
+            [disabled]="product.inCart"
+            (click)="addToCart(product.id); //!!!!!the same addtocart that we have already have in contex react and service
+            openModal(product.id)"
+            class='text-capitalize mb-0 cart-btns'
+            data-cart="cart">
+            <ng-template *ngIf="product.inCart; else elseBlock">in cart</ng-template>
+            <ng-template #elseBlock>add to cart</ng-template>
           </button>
       </div>
 
