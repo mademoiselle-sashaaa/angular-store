@@ -1,47 +1,46 @@
 <div *ngIf="product" class='container py-5'>
-    <div class="row">
-      <div class="col-10 mx-auto text-blue text-center text-slanted my-5">
-        <h1>{{product.title}}</h1>
-      </div>
+  <div class="row">
+    <div class="col-10 mx-auto text-blue text-center text-slanted my-5">
+      <h1>{{product.title}}</h1>
     </div>
-    <div class="row">
-      <div class="col-10 mx-auto col-md-6 my-3 text-capitalize">
-        <img src={{product.img}} class='img-fluid' alt='product'/>
-      </div>
-      <div class="col-10 mx-auto col-md-6 my-3 text-capitalize">
-        <h2>model: {{product.title}}</h2>
-        <h4 class='text-title text-muted text-uppercase mt-3 mb-2'>
-          made by: <span class='text-uppercase'>{{product.company}}</span>
-        </h4>
-        <h4 class='text-blue'>
-          <strong>
-            price: <span>$ {{product.price}}</span>
-          </strong>
-        </h4>
-        <p class="text-capitalize font-weight-bold mt-3 mb-0">
-          some info about product
-        </p>
-        <p class='text-muted lead'>
-         {{product.info}}
-        </p>
-         <!--buttons-->
-        <div>
-          <a routerLink ='/'>
+  </div>
+  <div class="row">
+    <div class="col-10 mx-auto col-md-6 my-3 text-capitalize">
+      <img src={{product.img}} class='img-fluid' alt='product'/>
+    </div>
+    <div class="col-10 mx-auto col-md-6 my-3 text-capitalize">
+      <h2>model: {{product.title}}</h2>
+      <h4 class='text-title text-muted text-uppercase mt-3 mb-2'>
+        made by: <span class='text-uppercase'>{{product.company}}</span>
+      </h4>
+      <h4 class='text-blue'>
+        <strong>
+          price: <span>$ {{product.price}}</span>
+        </strong>
+      </h4>
+      <p class="text-capitalize font-weight-bold mt-3 mb-0">
+        some info about product
+      </p>
+      <p class='text-muted lead'>
+        {{product.info}}
+      </p>
+      <!--buttons-->
+      <div>
+        <a routerLink='/'>
           <button class="cart-btns">
             Back to Products
           </button>
-          </a>
-          <button
-            [disabled]="product.inCart"
-            (click)="addToCart(product.id); //!!!!!the same addtocart that we have already have in contex react and service
+        </a>
+        <button
+          [disabled]="product.inCart"
+          (click)="addToCart(product.id); //!!!!!the same addtocart that we have already have in contex react and service
             openModal(product.id)"
-            class='text-capitalize mb-0 cart-btns'
-            data-cart="cart">
-            <ng-template *ngIf="product.inCart; else elseBlock">in cart</ng-template>
-            <ng-template #elseBlock>add to cart</ng-template>
-          </button>
+          class='text-capitalize mb-0 cart-btns'
+          data-cart="cart">
+          <ng-template *ngIf="product.inCart; else elseBlock">in cart</ng-template>
+          <ng-template #elseBlock>add to cart</ng-template>
+        </button>
       </div>
-
+    </div>
   </div>
-</div>
 </div>

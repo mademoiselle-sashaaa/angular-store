@@ -1,5 +1,9 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {Product} from '../product';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Product } from '../product';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +11,16 @@ import {Product} from '../product';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  @Input() product: Product;
+  product: Product;
+  constructor( private route: ActivatedRoute,
+               private productsService: ProductsService,
+               private location: Location) {
+  }
 
-  constructor() {
+  getProduct(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productsService.getProduct(id)
+      .subscribe(product => this.product = product);
   }
 
   addToCart(id) {
@@ -21,6 +32,7 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getProduct();
   }
 
 }

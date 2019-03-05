@@ -1,8 +1,8 @@
 <div class="card">
   <div class="img-container p-5">
-    <!--<a routerLink="/details">-->
+    <a routerLink="/details/{{product.id}}">
       <img src={{product.img}} alt="product" class="card-img-top"/>
-   <!--</a>-->
+   </a>
     <button class="cart-btn" [disabled]="product.inCart" (click)="addToCart(product)">
       <p class='text-capitalize mb-0' *ngIf="product.inCart; else elseBlock">in cart</p>
       <ng-template #elseBlock><i class='fas fa-cart-plus'></i></ng-template>
@@ -18,3 +18,4 @@
     </h5>
   </div>
 </div>
+
