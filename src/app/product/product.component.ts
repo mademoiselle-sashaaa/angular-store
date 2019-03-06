@@ -9,7 +9,7 @@ import {ProductsService} from '../products.service';
 })
 export class ProductComponent {
   @Input() product: Product;
-  @Output() showFromProduct = new EventEmitter<boolean>(); // !!!!
+  @Output() showFromProduct = new EventEmitter<{show: boolean, id: number}>(); // !!!!
 
   constructor(private productsService: ProductsService) {
   }
@@ -20,7 +20,7 @@ export class ProductComponent {
   }
 
   //// !!!!!!!!!!!!!!!!
-  showPopupProduct() {
-    this.showFromProduct.emit(true);
+  showPopupProduct(id) {
+    this.showFromProduct.emit({show: true, id} );
   }
 }

@@ -10,7 +10,7 @@ import {Product} from '../product';
 export class ProductListComponent implements OnInit {
   products: Product [];
   selectedProduct: Product;
-  showPopupList: false;
+  showPopupList: { show: false, id: null };
 
   constructor(private productsService: ProductsService) {
   }

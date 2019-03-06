@@ -1,15 +1,15 @@
-<div class="popup" *ngIf="show">
+<div class="popup" *ngIf="showPopup?.show">  <!-- not sure if ? is good solution -->
   <div class="container">
     <div class="row">
       <div id='modal' class="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
         <h5>Item added to the cart</h5>
-        <img src='./assets/img/product-8.png' class='img-fluid' alt='product'/>
+        <img src={{product.img}} class='img-fluid' alt='product'/>
         <h4 class='text-blue'>
-          {{'title'}}
+          {{product.title}}
         </h4>
         <h4 class='text-blue'>
           <strong>
-            price: <span>$ {{'price'}}</span>
+            price: <span>$ {{product.price}}</span>
           </strong>
         </h4>
         <!--buttons-->
@@ -18,7 +18,7 @@
             continue shopping
           </button>
           <a routerLink='/cart'>
-            <button class="cart-btns" (click)="closeModal()">
+            <button class="cart-btns" (click)="closeModal()" data-cart="cart">
               go to the cart
             </button>
           </a>
