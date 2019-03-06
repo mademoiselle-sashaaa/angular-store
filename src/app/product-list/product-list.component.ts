@@ -10,6 +10,7 @@ import {Product} from '../product';
 export class ProductListComponent implements OnInit {
   products: Product [];
   selectedProduct: Product;
+  showPopupList: false;
 
   constructor(private productsService: ProductsService) {
   }
@@ -21,6 +22,10 @@ export class ProductListComponent implements OnInit {
 
   handleDetail(product): void {
     this.selectedProduct = product;
+  }
+
+  showFromList($event) {
+    this.showPopupList = $event;
   }
 
   ngOnInit() {

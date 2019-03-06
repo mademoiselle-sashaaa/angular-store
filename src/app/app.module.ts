@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 import { DefaultComponent } from './default/default.component';
 import { CartComponent } from './cart/cart.component';
 import { TitleComponent } from './title/title.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TitleComponent } from './title/title.component';
     DetailsComponent,
     DefaultComponent,
     CartComponent,
-    TitleComponent
+    TitleComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,

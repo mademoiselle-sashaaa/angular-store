@@ -1,0 +1,29 @@
+<div class="popup" *ngIf="show">
+  <div class="container">
+    <div class="row">
+      <div id='modal' class="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
+        <h5>Item added to the cart</h5>
+        <img src='./assets/img/product-8.png' class='img-fluid' alt='product'/>
+        <h4 class='text-blue'>
+          {{'title'}}
+        </h4>
+        <h4 class='text-blue'>
+          <strong>
+            price: <span>$ {{'price'}}</span>
+          </strong>
+        </h4>
+        <!--buttons-->
+        <div>
+          <button class="cart-btns" (click)="closeModal()">
+            continue shopping
+          </button>
+          <a routerLink='/cart'>
+            <button class="cart-btns" (click)="closeModal()">
+              go to the cart
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

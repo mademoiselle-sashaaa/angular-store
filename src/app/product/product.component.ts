@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {Product} from '../product';
 import {ProductsService} from '../products.service';
 
@@ -9,6 +9,7 @@ import {ProductsService} from '../products.service';
 })
 export class ProductComponent {
   @Input() product: Product;
+  @Output() showFromProduct = new EventEmitter<boolean>(); // !!!!
 
   constructor(private productsService: ProductsService) {
   }
@@ -16,5 +17,10 @@ export class ProductComponent {
   addToCart(id: number) {
     this.productsService.addToCart(id)
       .subscribe(product => this.product = product);
+  }
+
+  //// !!!!!!!!!!!!!!!!
+  showPopupProduct() {
+    this.showFromProduct.emit(true);
   }
 }
