@@ -18,4 +18,12 @@ export class ProductsService {
   getProduct(id: number): Observable<Product> {
     return of(PRODUCTS.find(product => product.id === id));
   }
+
+  addToCart(id: number): Observable<Product> {
+    const product = PRODUCTS.find(_product => _product.id === id);
+          product.inCart = true;
+          product.count = 1;
+          product.total = product.count * product.price;
+    return of(product);
+  }
 }

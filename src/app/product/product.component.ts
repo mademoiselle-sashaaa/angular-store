@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Product} from '../product';
+import {ProductsService} from '../products.service';
 
 @Component({
   selector: 'app-product',
@@ -9,12 +10,11 @@ import {Product} from '../product';
 export class ProductComponent {
   @Input() product: Product;
 
-/*  handleDetail(product) {
-    debugger;
-    console.log(product);
-  }*/
+  constructor(private productsService: ProductsService) {
+  }
 
-  addToCart(product) {
-    console.log('added');
+  addToCart(id: number) {
+    this.productsService.addToCart(id)
+      .subscribe(product => this.product = product);
   }
 }
