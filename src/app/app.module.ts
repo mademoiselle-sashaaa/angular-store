@@ -11,6 +11,10 @@ import { DefaultComponent } from './default/default.component';
 import { CartComponent } from './cart/cart.component';
 import { TitleComponent } from './title/title.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { CartEmptyComponent } from './cart/cart-empty/cart-empty.component';
+import { CartColumnsComponent } from './cart/cart-columns/cart-columns.component';
+import { CartListComponent } from './cart/cart-list/cart-list.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     DefaultComponent,
     CartComponent,
     TitleComponent,
-    PopUpComponent
+    PopUpComponent,
+    CartEmptyComponent,
+    CartColumnsComponent,
+    CartListComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

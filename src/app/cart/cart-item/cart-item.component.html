@@ -1,0 +1,45 @@
+<div class="row my-1 text-capitalize text-center">
+  <div class="col-10 mx-auto col-lg-2">
+    <p class="text-uppercase">
+      <img src={{product.img}} class='img-fluid'
+           alt='product'/>
+      <!--style={{width: '5rem', height:'5rem'}}-->
+    </p>
+  </div>
+  <div class="col-10 mx-auto col-lg-2">
+    <span class='d-lg-none'>product: </span>
+    {{product.title}}
+  </div>
+  <div class="col-10 mx-auto col-lg-2">
+    <span class='d-lg-none'>price: </span>
+    {{product.price}}
+  </div>
+  <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
+    <div class="d-flex justify-content-center">
+      <div>
+        <span class="btn btn-black mx-1" (click)="decrement(product.id)">
+          -
+        </span>
+      </div>
+      <div>
+        <span class="btn btn-black mx-1">
+          {{product.count}}
+        </span>
+      </div>
+      <div>
+        <span class="btn btn-black mx-1" (click)="increment(product.id)">
+          +
+        </span>
+      </div>
+    </div>
+  </div>
+  <!--{/**/}-->
+  <div class="col-10 mx-auto col-lg-2">
+    <div class="cart-icon" (click)="removeItem(product.id)">
+      <i class='fas fa-trash'></i>
+    </div>
+  </div>
+  <div class="col-10 mx-auto col-lg-2">
+    <strong>item total: $ {{product.total}}</strong>
+  </div>
+</div>

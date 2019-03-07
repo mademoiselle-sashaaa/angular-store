@@ -1,6 +1,6 @@
 <div class='py-5'>
   <div class='container'>
-    <app-title></app-title>
+    <app-title [title]="'products'" [name]="'our'"></app-title>
     <div class='row'>
       <app-product *ngFor="let product of products"
                    [product]="product"

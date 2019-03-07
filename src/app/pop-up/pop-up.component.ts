@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, OnChanges} from '@angular/core';
 
 import {Product} from '../product';
-import {ProductsService} from '../products.service';
+import {ProductsService} from '../@common/products-service/products.service';
 
 @Component({
   selector: 'app-pop-up',

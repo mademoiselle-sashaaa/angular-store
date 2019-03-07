@@ -1,3 +1,11 @@
-<p>
-  cart works!
-</p>
+<section>
+  <div *ngIf="cart?.length>0 else elseBlock">
+    <app-title [title]="'cart'" [name]="'your'"></app-title>
+    <app-cart-columns></app-cart-columns>
+    <app-cart-list [cart]="cart"></app-cart-list>
+    <!--<CartTotals value={value} history={this.props.history}/>-->
+  </div>
+  <ng-template #elseBlock>
+    <app-cart-empty></app-cart-empty>
+  </ng-template>
+</section>
