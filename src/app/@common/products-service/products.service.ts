@@ -22,7 +22,7 @@ export class ProductsService {
   addToCart(id: number): Observable<Product> {
     const product = PRODUCTS.find(_product => _product.id === id);
           product.inCart = true;
-          product.count = 1;
+          product.count = product.count + 1;
           product.total = product.count * product.price;
     return of(product);
   }

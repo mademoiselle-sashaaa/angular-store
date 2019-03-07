@@ -12,9 +12,10 @@ import { ProductsService } from '../@common/products-service/products.service';
 })
 export class DetailsComponent implements OnInit {
   product: Product;
-  constructor( private route: ActivatedRoute,
-               private productsService: ProductsService,
-               private location: Location) {
+
+  constructor(private route: ActivatedRoute,
+              private productsService: ProductsService,
+              private location: Location) {
   }
 
   getProduct(): void {
@@ -34,5 +35,4 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.getProduct();
   }
-
 }

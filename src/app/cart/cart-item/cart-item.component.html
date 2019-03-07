@@ -1,9 +1,7 @@
 <div class="row my-1 text-capitalize text-center">
   <div class="col-10 mx-auto col-lg-2">
     <p class="text-uppercase">
-      <img src={{product.img}} class='img-fluid'
-           alt='product'/>
-      <!--style={{width: '5rem', height:'5rem'}}-->
+      <img src={{product.img}} class='img-fluid img-cart' alt='product'/>
     </p>
   </div>
   <div class="col-10 mx-auto col-lg-2">
@@ -35,7 +33,7 @@
   </div>
   <!--{/**/}-->
   <div class="col-10 mx-auto col-lg-2">
-    <div class="cart-icon" (click)="removeItem(product.id)">
+    <div class="cart-icon" (click)="removeProduct(product.id)">
       <i class='fas fa-trash'></i>
     </div>
   </div>
