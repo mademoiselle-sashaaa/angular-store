@@ -32,6 +32,7 @@
           </button>
         </a>
         <button
+          [disabled]="product.inCart"
           (click)="addToCart(product.id); //!!!!!the same addtocart that we have already have in contex react and service
             openModal(product.id)"
           class='text-capitalize mb-0 cart-btns'

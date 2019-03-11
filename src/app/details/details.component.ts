@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 
-import { Product } from '../product';
-import { ProductsService } from '../@common/products-service/products.service';
+import {Observable, of} from 'rxjs';
+
+import {Product} from '../product';
+import {PRODUCTS} from '../../data-mock';
+
+import {ProductsService} from '../@common/products-service/products.service';
+import {CartService} from '../@common/cart-service/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -15,6 +20,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService,
+              private cartService: CartService,
               private location: Location) {
   }
 
@@ -24,8 +30,13 @@ export class DetailsComponent implements OnInit {
       .subscribe(product => this.product = product);
   }
 
-  addToCart(id) {
-    console.log('added', id);
+  addToCart(id: number): Observable<Product> {
+    const product = PRODUCTS.find(_product => _product.id === id);
+    product.inCart = true;
+    product.count = product.count + 1;
+    product.total = product.count * product.price;
+    this.cartService.addProduct(product);
+    return of(product);
   }
 
   openModal(id) {

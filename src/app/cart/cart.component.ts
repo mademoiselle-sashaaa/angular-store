@@ -8,16 +8,16 @@ import {CartService} from '../@common/cart-service/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cart: Product[];
+  // cart: Product[];
 
-  constructor(private cartService: CartService) {
+  constructor(public cartService: CartService) {
   }
 
   getCart() {
-    this.cart = this.cartService.getCart();
+   // this.cart = this.cartService.getCart();
   }
 
   ngOnInit() {
-    this.getCart();
+    //this.getCart();
   }
 }
