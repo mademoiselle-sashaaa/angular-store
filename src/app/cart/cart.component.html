@@ -1,9 +1,8 @@
 <section>
-<!--  <div *ngIf="cart?.length>0 else elseBlock">-->
-    <div *ngIf="cartService.cart?.length>0 else elseBlock">
+    <div *ngIf="cart?.length>0 else elseBlock">
     <app-title [title]="'cart'" [name]="'your'"></app-title>
     <app-cart-columns></app-cart-columns>
-    <app-cart-list [cart]="cartService.cart"></app-cart-list>
+    <app-cart-list [cart]="cart"></app-cart-list>
     <!--<CartTotals value={value} history={this.props.history}/>-->
   </div>
   <ng-template #elseBlock>

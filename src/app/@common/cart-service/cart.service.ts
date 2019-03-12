@@ -1,28 +1,38 @@
-import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import { Injectable } from '@angular/core';
+
+import { BehaviorSubject, Observable } from 'rxjs';
+
 import {Product} from '../../product';
-import {PRODUCTS} from '../../../data-mock';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   cart: Product[] = [];
 
+  private readonly cart$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
+
   constructor() {
   }
 
-  addProduct(product: Product) {
-    this.cart.push(product);
-    console.log(this.cart);
+  getEmitter(): Observable<Product[]> {
+    return this.cart$.asObservable();
   }
 
-  removeProduct(id): Observable<Product[]> { // stupid solution!!!!!
+  addProduct(product: Product): void {
+    this.cart.push(product);
+    this.cart$.next(this.cart);
+
+  }
+
+  removeProduct(id): void { // stupid solution!!!!!
     const selectedProduct = this.cart.find(item => item.id === id);
     selectedProduct.count = 0;
     selectedProduct.total = 0;
     selectedProduct.inCart = false;
-    return of(this.cart = this.cart.filter(item => item.id !== id));
+
+    const tempCart = this.cart = this.cart.filter(item => item.id !== id);
+    this.cart$.next(tempCart);
   }
 
   increaseTotal(id) {
@@ -41,9 +51,8 @@ export class CartService {
     this.removeProduct(id);
   }
 
-
-/*  getCart(): Product[] {
-    return this.cart;
-  }*/
+  getCart(): void {
+    this.cart$.next(this.cart);
+  }
 
 }
