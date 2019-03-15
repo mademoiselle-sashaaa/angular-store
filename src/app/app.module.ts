@@ -1,20 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartColumnsComponent } from './cart/cart-columns/cart-columns.component';
+import { CartEmptyComponent } from './cart/cart-empty/cart-empty.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { CartListComponent } from './cart/cart-list/cart-list.component';
+import { CartComponent } from './cart/cart.component';
+import { DefaultComponent } from './default/default.component';
+import { DetailsComponent } from './details/details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
-import { DetailsComponent } from './details/details.component';
-import { DefaultComponent } from './default/default.component';
-import { CartComponent } from './cart/cart.component';
 import { TitleComponent } from './title/title.component';
-import { PopUpComponent } from './pop-up/pop-up.component';
-import { CartEmptyComponent } from './cart/cart-empty/cart-empty.component';
-import { CartColumnsComponent } from './cart/cart-columns/cart-columns.component';
-import { CartListComponent } from './cart/cart-list/cart-list.component';
-import { CartItemComponent } from './cart/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +30,13 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
     CartEmptyComponent,
     CartColumnsComponent,
     CartListComponent,
-    CartItemComponent
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

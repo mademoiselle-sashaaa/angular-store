@@ -1,27 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {Observable, of} from 'rxjs';
+import { Observable, of } from 'rxjs';
 
-import {Product} from '../product';
-import {PRODUCTS} from '../../data-mock';
+import { PRODUCTS } from '../../data-mock';
+import { Product } from '../product';
 
-import {ProductsService} from '../@common/products-service/products.service';
-import {CartService} from '../@common/cart-service/cart.service';
+import { CartService } from '../@common/cart-service/cart.service';
+import { ProductsService } from '../@common/products-service/products.service';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
   product: Product;
 
-  constructor(private route: ActivatedRoute,
-              private productsService: ProductsService,
-              private cartService: CartService,
-              private location: Location) {
+  constructor(private readonly route: ActivatedRoute,
+              private readonly productsService: ProductsService,
+              private readonly cartService: CartService,
+              private readonly location: Location) {
   }
 
   getProduct(): void {
@@ -36,14 +36,15 @@ export class DetailsComponent implements OnInit {
     product.count = product.count + 1;
     product.total = product.count * product.price;
     this.cartService.addProduct(product);
+
     return of(product);
   }
 
-  openModal(id) {
+  openModal(id: number): void {
     console.log('modal', id);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProduct();
   }
 }

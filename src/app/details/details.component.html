@@ -1,7 +1,7 @@
 <div *ngIf="product" class='container py-5'>
   <div class="row">
     <div class="col-10 mx-auto text-blue text-center text-slanted my-5">
-      <h1>{{product.title}}</h1>
+      <h1>{{ product.title }}</h1>
     </div>
   </div>
   <div class="row">
@@ -9,20 +9,20 @@
       <img src={{product.img}} class='img-fluid' alt='product'/>
     </div>
     <div class="col-10 mx-auto col-md-6 my-3 text-capitalize">
-      <h2>model: {{product.title}}</h2>
+      <h2>model: {{ product.title }}</h2>
       <h4 class='text-title text-muted text-uppercase mt-3 mb-2'>
-        made by: <span class='text-uppercase'>{{product.company}}</span>
+        made by: <span class='text-uppercase'>{{ product.company }}</span>
       </h4>
       <h4 class='text-blue'>
         <strong>
-          price: <span>$ {{product.price}}</span>
+          price: <span>$ {{ product.price }}</span>
         </strong>
       </h4>
       <p class="text-capitalize font-weight-bold mt-3 mb-0">
         some info about product
       </p>
       <p class='text-muted lead'>
-        {{product.info}}
+        {{ product.info }}
       </p>
       <!--buttons-->
       <div>

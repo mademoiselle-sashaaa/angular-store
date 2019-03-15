@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import {Product} from '../../product';
+import { Product } from '../../product';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,7 @@ export class CartService {
 
   }
 
-  removeProduct(id): void { // stupid solution!!!!!
+  removeProduct(id: number): void { // stupid solution!!!!!
     const selectedProduct = this.cart.find(item => item.id === id);
     selectedProduct.count = 0;
     selectedProduct.total = 0;
@@ -35,17 +35,18 @@ export class CartService {
     this.cart$.next(tempCart);
   }
 
-  increaseTotal(id) {
+  increaseTotal(id: number): void {
     const selectedProduct = this.cart.find(item => item.id === id);
     selectedProduct.count += 1;
     selectedProduct.total = selectedProduct.price * selectedProduct.count;
   }
 
-  decreaseTotal(id) {
+  decreaseTotal(id: number): void {
     const selectedProduct = this.cart.find(item => item.id === id);
     if (selectedProduct.count !== 1) {
       selectedProduct.count -= 1;
       selectedProduct.total = selectedProduct.price * selectedProduct.count;
+
       return;
     }
     this.removeProduct(id);

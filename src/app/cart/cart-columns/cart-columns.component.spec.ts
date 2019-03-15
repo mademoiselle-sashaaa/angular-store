@@ -8,7 +8,7 @@ describe('CartColumnsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartColumnsComponent ]
+      declarations: [ CartColumnsComponent ],
     })
     .compileComponents();
   }));

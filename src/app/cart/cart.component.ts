@@ -1,9 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
-import {Product} from '../product';
-import {CartService} from '../@common/cart-service/cart.service';
+import { CartService } from '../@common/cart-service/cart.service';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +18,7 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(private readonly cartService: CartService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.cartService.getEmitter()
       .pipe(
         takeUntil(this.onDestroy$),

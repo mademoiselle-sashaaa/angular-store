@@ -1,4 +1,4 @@
-import {Product} from './app/product';
+import { Product } from './app/product';
 
 export const PRODUCTS: Product[] = [
   {
@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 5,
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 6,
@@ -107,7 +107,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 7,
@@ -125,7 +125,7 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
   },
   {
     id: 8,
@@ -143,8 +143,8 @@ export const PRODUCTS: Product[] = [
       ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
     inCart: false,
     count: 0,
-    total: 0
-  }
+    total: 0,
+  },
 ];
 
 export const detailProduct: Product = {
@@ -163,5 +163,5 @@ export const detailProduct: Product = {
     ' Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.',
   inCart: false,
   count: 0,
-  total: 0
+  total: 0,
 };

@@ -1,24 +1,24 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {Product} from '../product';
-import {ProductsService} from '../@common/products-service/products.service';
-import {CartService} from '../@common/cart-service/cart.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CartService } from '../@common/cart-service/cart.service';
+import { ProductsService } from '../@common/products-service/products.service';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
   @Input() product: Product;
-  @Output() showFromProduct = new EventEmitter<{ show: boolean, id: number }>(); // !!!!
+  @Output() readonly showFromProduct = new EventEmitter<{ show: boolean, id: number }>(); // !!!!
 
   constructor(
-    private productsService: ProductsService,
-    private cartSevice: CartService
+    private readonly productsService: ProductsService,
+    private readonly cartSevice: CartService,
   ) {
   }
 
-  addToCart(id: number) {
+  addToCart(id: number): void {
     this.productsService.addToCart(id)
       .subscribe(product => {
         this.product = product;
@@ -27,7 +27,7 @@ export class ProductComponent {
   }
 
   //// !!!!!!!!!!!!!!!!
-  showPopupProduct(id) {
+  showPopupProduct(id: number): void {
     this.showFromProduct.emit({show: true, id});
   }
 }

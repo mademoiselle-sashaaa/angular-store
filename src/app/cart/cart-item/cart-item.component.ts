@@ -1,33 +1,29 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {Product} from '../../product';
-import {CartService} from '../../@common/cart-service/cart.service';
-import {ProductsService} from '../../@common/products-service/products.service';
+import { Component, Input } from '@angular/core';
+import { CartService } from '../../@common/cart-service/cart.service';
+import { ProductsService } from '../../@common/products-service/products.service';
+import { Product } from '../../product';
 
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.scss']
+  styleUrls: ['./cart-item.component.scss'],
 })
-export class CartItemComponent implements OnInit {
+export class CartItemComponent {
   @Input() product: Product;
 
   constructor(
-    private productService: ProductsService,
-    private cartService: CartService) {}
+    private readonly productService: ProductsService,
+    private readonly cartService: CartService) {}
 
-  increment(id: number) {
+  increment(id: number): void {
     this.cartService.increaseTotal(id);
   }
 
-  decrement(id: number) {
+  decrement(id: number): void {
     this.cartService.decreaseTotal(id);
   }
 
-  removeProduct(id: number) {
+  removeProduct(id: number): void {
     this.cartService.removeProduct(id);
   }
-
-  ngOnInit() {
-  }
-
 }
