@@ -150,7 +150,7 @@
     "rxjs-no-unused-add": {
       "severity": "error"
     },
-    "i18n": false,
+    "template-i18n": false,
     "template-cyclomatic-complexity": [true, 20],
     "blank-line": [true, "ignore-imports"],
     // tslint-consistent-codestyle rules
